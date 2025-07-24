@@ -70,7 +70,8 @@
     <script>
       document
         .getElementById("formulario")
-        .addEventListener("submit", async function () {
+        .addEventListener("submit", async function (e) {
+            e.preventDefault(); // Previne o envio padrão do formulário
           const form = document.getElementById("formulario");
           const nome = document.getElementById("nome").value;
           const email = document.getElementById("email").value;
