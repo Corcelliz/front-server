@@ -71,6 +71,7 @@
       document
         .getElementById("formulario")
         .addEventListener("submit", async function () {
+          const form = document.getElementById("formulario");
           const nome = document.getElementById("nome").value;
           const email = document.getElementById("email").value;
           const mensagem = document.getElementById("mensagem").value;
