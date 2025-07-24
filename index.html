@@ -80,7 +80,7 @@
           const resposta = document.getElementById("resposta");
 
           try {
-            const res = await fetch("/enviar", {
+            const res = await fetch("https://form-server-page.onrender.com", {
               method: "POST",
               headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
