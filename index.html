@@ -54,7 +54,7 @@
     </style>
   </head>
   <body>
-    <form id="formulario">
+    <form id="formulario" method="POST">
       <h2>Contato</h2>
       <label for="nome">Nome:</label>
       <input type="text" id="nome" name="nome" required />
@@ -67,7 +67,7 @@
 
       <button type="submit">Enviar</button>
 
-      <div id="resposta" style="margin: 30px;"></div>
+      <div id="resposta" style="margin: 30px"></div>
     </form>
     <script>
       document
@@ -75,7 +75,6 @@
         .addEventListener("submit", async function (e) {
           e.preventDefault(); // Previne o envio padrão do formulário
 
-          // const resposta = document.getElementById("resposta");
           const form = document.getElementById("formulario");
           const nome = document.getElementById("nome").value;
           const email = document.getElementById("email").value;
@@ -98,7 +97,7 @@
             );
 
             if (res.ok) {
-              resposta.innerHTML = `<span style="color:lightgreen; margin: 20px;">Mensagem enviada com sucesso!</span>`;
+              resposta.innerHTML = `<span style="color:lightgreen;">Mensagem enviada com sucesso!</span>`;
               form.reset();
             } else {
               resposta.innerHTML = `<span style="color:red;">Erro ao enviar mensagem.</span>`;
