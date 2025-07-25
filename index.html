@@ -105,6 +105,7 @@
               resposta.innerHTML = `<span style="color:red;">Erro ao enviar mensagem.</span>`;
             }
           } catch (error) {
+            console.error("Erro de conexão:", error);
             resposta.innerHTML = `<span style="color:red;">Falha na conexão com o servidor.</span>`;
           }
         });
