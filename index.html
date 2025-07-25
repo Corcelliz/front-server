@@ -73,28 +73,27 @@
       document
         .getElementById("formulario")
         .addEventListener("submit", async function (e) {
-            e.preventDefault(); // Previne o envio padrão do formulário
-          const nome = document.getElementById("nome").value = '';
-          const email = document.getElementById("email").value = '';
-          const mensagem = document.getElementById("mensagem").value = '';
+          e.preventDefault(); // Previne o envio padrão do formulário
+
+          const URL = "https://form-server-page.onrender.com/enviar";
+          const nome = (document.getElementById("nome").value = "");
+          const email = (document.getElementById("email").value = "");
+          const mensagem = (document.getElementById("mensagem").value = "");
 
           const resposta = document.getElementById("resposta");
 
           try {
-            const res = await fetch(
-              "https://form-server-page.onrender.com/enviar",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: `nome=${encodeURIComponent(
-                  nome
-                )}&email=${encodeURIComponent(
-                  email
-                )}&mensagem=${encodeURIComponent(mensagem)}`,
-              }
-            );
+            const res = await fetch(URL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: `nome=${encodeURIComponent(
+                nome
+              )}&email=${encodeURIComponent(
+                email
+              )}&mensagem=${encodeURIComponent(mensagem)}`,
+            });
 
             if (res.ok) {
               resposta.innerHTML = `<span style="color:lightgreen;">Mensagem enviada com sucesso!</span>`;
