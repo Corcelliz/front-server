@@ -75,7 +75,7 @@
         .addEventListener("submit", async function (e) {
           e.preventDefault(); // Previne o envio padrão do formulário
 
-          const URL = "https://form-server-page.onrender.com/enviar";
+          const API_URL = "https://form-server-page.onrender.com/enviar";
           const nome = (document.getElementById("nome").value = "");
           const email = (document.getElementById("email").value = "");
           const mensagem = (document.getElementById("mensagem").value = "");
@@ -83,7 +83,7 @@
           const resposta = document.getElementById("resposta");
 
           try {
-            const res = await fetch(URL, {
+            const res = await fetch(API_URL, {
               method: "POST",
               headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
